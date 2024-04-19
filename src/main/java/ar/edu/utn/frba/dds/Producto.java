@@ -7,10 +7,10 @@ import java.util.Objects;
  */
 public class Producto {
   //hola
-  public Material material;
-  public Trama trama;
-  public Color color;
-  public Color colorSecundario;
+  private Material material;
+  private Trama trama;
+  private Color color;
+  private Color colorSecundario;
 
   /**
    .com

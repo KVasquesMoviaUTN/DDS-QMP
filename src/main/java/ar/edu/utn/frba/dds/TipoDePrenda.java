@@ -3,13 +3,15 @@ package ar.edu.utn.frba.dds;
 /**
  .com
  */
-public class TipoDePrenda {
-  public Categoria categoria;
+public enum TipoDePrenda {
+  ZAPATO(Categoria.CALZADO),
+  REMERA(Categoria.PARTE_SUPERIOR),
+  POLLERA(Categoria.PARTE_INFERIOR);
+
 
   /**
    .com
    */
-  public TipoDePrenda(Categoria categoria) {
-    this.categoria = categoria;
+  TipoDePrenda(Categoria categoria) {
   }
 }

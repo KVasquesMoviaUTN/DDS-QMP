@@ -9,11 +9,11 @@ public class Main {
    */
   public static void main(String[] args) {
     Color rojo = new Color(255, 0, 0);
-    TipoDePrenda zapato = new TipoDePrenda(Categoria.CALZADO);
     Producto cueroLisoRojo = new Producto(Material.CUERO, Trama.LISA, rojo, null);
 
-    System.out.println("Prueba: ");
+    Prenda prenda = new Prenda(TipoDePrenda.ZAPATO, cueroLisoRojo, null);
 
-    Prenda otraPrenda = new Prenda(zapato, cueroLisoRojo, null); //ITERACION 2
+    System.out.println(prenda);
+
   }
 }
