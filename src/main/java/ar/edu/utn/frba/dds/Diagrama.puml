@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Borrador
+class Color
+class Prenda
+class Producto
+class MotorSugerencias
+class MotorSugerenciasFormalidad extends MotorSugerencias
+class Usuario
+class Ropero
+class Atuendo
+
+enum Categoria
+enum Material
+enum TipoDePrenda
+enum Trama
+enum Codigo
+
+TipoDePrenda --> Categoria
+
+Producto --> Color
+Producto --> Trama
+Producto --> Material
+
+Prenda --> TipoDePrenda
+Prenda --> Producto
+Prenda --> Codigo
+
+Borrador --> Prenda : <create>
+
+Usuario -> Ropero
+Ropero -> MotorSugerenciasFormalidad
+MotorSugerenciasFormalidad -> Atuendo
+Atuendo -> Borrador
+
+
+
+@enduml

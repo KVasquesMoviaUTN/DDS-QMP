@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.dds;
+package ar.edu.utn.frba.dds.prenda;
 
 import java.util.Objects;
 
@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Producto {
   //hola
   private Material material;
-  private Trama trama;
+  private Trama trama = Trama.LISA;
   private Color color;
   private Color colorSecundario;
 
@@ -16,9 +16,12 @@ public class Producto {
    .com
    */
   public Producto(Material material, Trama trama, Color color, Color colorSecundario) {
-    this.material = Objects.requireNonNull(material, "Necesito un material");
-    this.trama = Objects.requireNonNullElse(trama, Trama.LISA);
     this.color = Objects.requireNonNull(color, "Necesito un color");
     this.colorSecundario = colorSecundario;
+
+    this.material = Objects.requireNonNull(material, "Necesito un material");
+    if (trama != null) {
+      this.trama = trama;
+    }
   }
 }
