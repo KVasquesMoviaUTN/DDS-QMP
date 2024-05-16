@@ -3,21 +3,27 @@ package ar.edu.utn.frba.dds;
 import ar.edu.utn.frba.dds.motores.MotorSugerencias;
 import ar.edu.utn.frba.dds.motores.MotorSugerenciasFormalidad;
 import ar.edu.utn.frba.dds.prenda.Formalidad;
-
+import ar.edu.utn.frba.dds.servicios.ServicioMetereologico;
+import java.time.Duration;
 import java.util.List;
 
 public class Usuario {
   private Integer edad;
   private MotorSugerencias motorSugerencias;
   private MotorSugerenciasFormalidad motorSugerenciasFormalidad;
-  private Formalidad preferenciaFormalidad;
-
+  private ServicioMetereologico servicioMetereologico;
   private Ropero ropero;
-  public List<Atuendo> generarSugerenciasConRopero(Ropero ropero) {
-    if (this.preferenciaFormalidad == Formalidad.FORMAL) {
-      return motorSugerenciasFormalidad.generarSugerenciasCon(ropero.prendasDelRopero(), this.edad);
+
+  public Usuario(Integer edad, String ciudad) {
+    this.servicioMetereologico = new ServicioMetereologico(Duration.ofHours(3), ciudad);
+    this.edad = edad;
+  }
+
+  public List<Atuendo> generarSugerenciasConRopero(Ropero ropero, Formalidad formalidad, ServicioMetereologico servicioMetereologico) {
+    if (formalidad == Formalidad.FORMAL) {
+      return motorSugerenciasFormalidad.generarSugerenciasCon(ropero.prendasDelRopero(), this.edad, servicioMetereologico.obtenerClimaCadaCiertoTiempo());
     }
-    return motorSugerencias.generarSugerenciasCon(ropero.prendasDelRopero(), this.edad);
+    return motorSugerencias.generarSugerenciasCon(ropero.prendasDelRopero(), this.edad, servicioMetereologico.obtenerClimaCadaCiertoTiempo());
   }
 
 }

@@ -7,14 +7,14 @@ import ar.edu.utn.frba.dds.prenda.Prenda;
 import java.util.List;
 
 public class MotorSugerenciasFormalidad extends MotorSugerencias {
-  public List<Prenda> prendasValidas(List<Prenda> prendas, Integer edad) {
+  private List<Prenda> prendasValidas(List<Prenda> prendas, Integer edad) {
     return edad > 55 ? prendas.stream().filter(p -> p.getFormalidad() == Formalidad.FORMAL).toList() : prendas;
   }
   /**
-   * Devuelve una lista con todas las combinaciones de ropa formal segun la edad
+   * Llama a generarSugerencias pasando las prendas ya filtradas
    .com
    */
-  public List<Atuendo> generarSugerenciasFormalesCon(List<Prenda> prendas, Integer edad) {
-    return generarSugerenciasCon(prendasValidas(prendas, edad), edad);
+  public List<Atuendo> generarSugerenciasFormalesCon(List<Prenda> prendas, Integer edad, Double temperature) {
+    return generarSugerenciasCon(prendasValidas(prendas, edad), edad, temperature);
   }
 }

@@ -10,6 +10,7 @@ public class Prenda {
   private Color colorSecundario;
   private Producto producto;
   private Formalidad formalidad;
+  private Integer temperaturaMaximaAdecuada;
 
   /**
    .com
@@ -25,5 +26,9 @@ public class Prenda {
 
   public Formalidad getFormalidad() {
     return this.formalidad;
+  }
+
+  public Integer getTemperaturaMaximaAdecuada() {
+    return this.temperaturaMaximaAdecuada;
   }
 }

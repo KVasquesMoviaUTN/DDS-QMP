@@ -10,6 +10,7 @@ class MotorSugerenciasFormalidad extends MotorSugerencias
 class Usuario
 class Ropero
 class Atuendo
+class Clima
 
 enum Categoria
 enum Material
@@ -33,6 +34,8 @@ Usuario -> Ropero
 Ropero -> MotorSugerenciasFormalidad
 MotorSugerenciasFormalidad -> Atuendo
 Atuendo -> Borrador
+
+Usuario --> Clima
 
 
 
