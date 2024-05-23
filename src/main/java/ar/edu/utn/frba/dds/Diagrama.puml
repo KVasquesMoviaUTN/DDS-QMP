@@ -10,7 +10,8 @@ class MotorSugerenciasFormalidad extends MotorSugerencias
 class Usuario
 class Ropero
 class Atuendo
-class Clima
+class AccuWeatherAPI
+class Propuesta
 
 enum Categoria
 enum Material
@@ -30,13 +31,14 @@ Prenda --> Codigo
 
 Borrador --> Prenda : <create>
 
-Usuario -> Ropero
+Usuario ---> Ropero
 Ropero -> MotorSugerenciasFormalidad
 MotorSugerenciasFormalidad -> Atuendo
 Atuendo -> Borrador
 
-Usuario --> Clima
+Usuario --> AccuWeatherAPI
 
-
+Ropero --> Propuesta : *
+Propuesta --> Prenda
 
 @enduml

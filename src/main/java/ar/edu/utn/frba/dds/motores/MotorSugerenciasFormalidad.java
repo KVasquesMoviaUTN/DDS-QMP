@@ -1,6 +1,6 @@
 package ar.edu.utn.frba.dds.motores;
 
-import ar.edu.utn.frba.dds.Atuendo;
+import ar.edu.utn.frba.dds.ropero.Atuendo;
 import ar.edu.utn.frba.dds.prenda.Formalidad;
 import ar.edu.utn.frba.dds.prenda.Prenda;
 
